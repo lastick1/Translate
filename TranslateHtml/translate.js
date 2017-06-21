@@ -6,10 +6,14 @@ function TranslatorController($scope) {
         $scope.$apply();
     });
     $scope.translate = function () {
-        getTranslation(apiKey, $scope.direction(), $scope.textSrc, function (translatedText) {
-            $scope.textDest = translatedText;
-            $scope.$apply();
-        });
+        if ($scope.langDest && $scope.textSrc) {
+            getTranslation(apiKey, $scope.direction(), $scope.textSrc, function (translatedText) {
+                $scope.textDest = translatedText;
+                $scope.$apply();
+            });
+        } else {
+            $scope.textDest = "";
+        }
     };
     $scope.direction = function () {
         var src = getKeyByValye($scope.langs, $scope.langSrc);
