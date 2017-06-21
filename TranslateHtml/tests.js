@@ -20,6 +20,19 @@ QUnit.test("getLangs returns something", function (assert) {
     }, 150);
 });
 
+QUnit.test("detectLang works", function (assert) {
+    var texts = ["hi", "привет"];
+    var done = assert.async(texts.length);
+    for (i in texts)
+    {
+        var object = detectLang(apiKey, texts[i], function (data) {
+            assert.equal(typeof data, "string", " typeof data.lang is string");
+            assert.ok(data.length > 0, "data.lang contains something");
+            done();
+        });
+    }
+});
+
 QUnit.test("getTranslation works", function (assert) {
     var done = assert.async();
     var dir = "ru-en";

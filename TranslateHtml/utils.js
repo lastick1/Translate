@@ -25,21 +25,33 @@ function getLangs(key, callback) {
 }
 
 function getTranslation(key, lang, text, callback) {
-    var format = "plain";
-    var options = 1;
     var jqXHR = $.ajax({
         url: "https://translate.yandex.net/api/v1.5/tr.json/translate",
         method: "POST",
         data: {
             key: key,
             text: text,
-            lang: lang,
-            format: format,
-            options: options
+            lang: lang
         },
         complete: function (resp) {
             jqXHR.text = resp.responseJSON.text;
             callback(resp.responseJSON.text);
+        }
+    });
+    return jqXHR;
+}
+
+function detectLang(key, text, callback) {
+    var jqXHR = $.ajax({
+        url: "https://translate.yandex.net/api/v1.5/tr.json/detect",
+        method: "POST",
+        data: {
+            key: key,
+            text: text
+        },
+        complete: function (resp) {
+            jqXHR.text = resp.responseJSON;
+            callback(resp.responseJSON.lang);
         }
     });
     return jqXHR;

@@ -36,6 +36,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="style.css" />
     <Content Include="translate.html" />
     <Content Include="tests.html" />
     <Content Include="tests.js" />

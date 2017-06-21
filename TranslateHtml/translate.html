@@ -8,35 +8,28 @@
             crossorigin="anonymous"></script>
     <script src="utils.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
-    <style type="text/css">
-        .form select.ng-invalid.ng-touched.check {
-            border-color: #FA787E;
-        }
-
-        .form select.ng-valid.ng-touched.check {
-            border-color: #78FA89;
-        }
-    </style>
+    <script src="translate.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <title>Переводчик</title>
 </head>
 <body ng-app="translateApp">
-    <script src="translate.js" type="text/javascript"></script>
-    
     <h2>Переводчик</h2>
     <div ng-controller="TranslatorController">
         <div>
-            <form name="form" class="form" ng-model-options="{ allowInvalid: false, updateOn: 'blur' }">
-                <select ng-model="langSrc" ng-options="value for (key , value) in langs">
+            <form name="form" class="form" ng-model-options="{ allowInvalid: false }">
+                <select ng-model="langSrc" ng-options="value group by value.substring(0,1) for (key , value) in langs">
                     <option selected value="">-- Исходный язык --</option>
                 </select>
                 ►
-                <select class="check" ng-model="langDest" ng-options="value for (key , value) in langs" name="dest" required=""></select>
+                <select class="check" ng-model="langDest" ng-options="value group by value.substring(0,1) for (key , value) in langs" name="dest" required=""></select>
                 <div ng-show="form.$submitted || form.dest.$touched">
                     <div ng-show="form.dest.$error.required">Выберите язык, на который перевести</div>
                 </div>
                 <input ng-click="translate()" style="display:block;" type="submit" />
                 <div>
-                    <textarea placeholder="Что перевести?" ng-model="textSrc" style="min-width: 25%;"></textarea>
+                    <textarea placeholder="Что перевести?" ng-model-options="{ debounce: 250 }" ng-model="textSrc" ></textarea>
+                    <br />
+                    <span ng-model="textSrc">{{textSrc}}</span>
                 </div>
                 <div>
                     <span ng-show="form.$submitted && textDest">Результат перевода:</span>
