@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="utils.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <title>Переводчик</title>
+</head>
+<body ng-app="translateApp">
+    <script src="translate.js" type="text/javascript"></script>
+    <h2>Переводчик</h2>
+    <div ng-controller="TranslatorController">
+        <div>
+            <select ng-model="langSrc" ng-options="value for (key , value) in langs">
+                <option selected value="">-- Исходный язык --</option>
+            </select>
+            ►
+            <select ng-model="langDest" ng-options="value for (key , value) in langs" required>
+            </select>
+            <h4>direction: {{direction()}}</h4>
+            <form ng-submit="translate();">
+                <input style="display:block;" type="submit" />
+                <div style="display:inline-block;">
+                    <textarea placeholder="src" ng-model="textSrc"></textarea>
+                </div>
+                <div style="display:inline-block;">
+                    <span>Результат перевода:</span>
+                    <div ng-model="textDest">
+                        {{textDest}}
+                    </div>
+                </div>
+                
+            </form>
+            <h4>Переведено сервисом «Яндекс.Переводчик»</h4>
+        </div>
+    </div>
+</body>
+</html>
