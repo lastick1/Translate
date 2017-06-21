@@ -1,9 +1,13 @@
 ﻿.form textarea {
     min-width: 25%;
     max-width: 50%;
+    display: block;
 }
 .form select {
     min-width: 12%;
+}
+.form span {
+    display: block;
 }
 .form select.ng-invalid.ng-touched.check {
     border-color: #FA787E;

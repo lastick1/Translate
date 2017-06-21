@@ -36,12 +36,17 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="api_key.js" />
     <Content Include="style.css" />
     <Content Include="translate.html" />
     <Content Include="tests.html" />
     <Content Include="tests.js" />
     <Content Include="translate.js" />
     <Content Include="utils.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

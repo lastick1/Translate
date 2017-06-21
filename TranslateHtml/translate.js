@@ -1,5 +1,4 @@
-﻿var apiKey = "trnsl.1.1.20170620T205948Z.2d4961ed8cdc9f6b.5742eade6518509ff3ba87a36d94e6e34ca53f1c";
-function TranslatorController($scope) {
+﻿function TranslatorController($scope) {
     $scope.langs = { ru: "Русский" , en: "Английский" };
     $scope.langDest = "Русский";
     getLangs(apiKey, function (data) {
