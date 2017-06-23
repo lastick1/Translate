@@ -1,6 +1,4 @@
-﻿var apiKey = "trnsl.1.1.20170620T205948Z.2d4961ed8cdc9f6b.5742eade6518509ff3ba87a36d94e6e34ca53f1c";
-
-QUnit.test("hello test", function (assert) {
+﻿QUnit.test("hello test", function (assert) {
     assert.ok(1 == "1", "Passed!");
 });
 
