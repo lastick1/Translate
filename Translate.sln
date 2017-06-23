@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslateDesktop", "TranslateDesktop\TranslateDesktop.csproj", "{204D081D-8C97-4568-8DB2-8D7CD088C3F9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslateHtml", "TranslateHtml\TranslateHtml.csproj", "{D8CD32B8-1409-48E5-BA34-8EF79D3EF8DA}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{204D081D-8C97-4568-8DB2-8D7CD088C3F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{204D081D-8C97-4568-8DB2-8D7CD088C3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{204D081D-8C97-4568-8DB2-8D7CD088C3F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{204D081D-8C97-4568-8DB2-8D7CD088C3F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D8CD32B8-1409-48E5-BA34-8EF79D3EF8DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D8CD32B8-1409-48E5-BA34-8EF79D3EF8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8CD32B8-1409-48E5-BA34-8EF79D3EF8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
